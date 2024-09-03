@@ -30,8 +30,10 @@ pipeline {
                 sh "mvn clean package"
             }
             post {
-                echo "开始存档......"
-                archiveArtifacts artifacts: "**/target/*.war"
+                success {
+                    echo "开始存档......"
+                    archiveArtifacts artifacts: "**/target/*.war"
+                }
             }
         }
     }
