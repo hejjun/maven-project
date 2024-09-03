@@ -23,6 +23,7 @@ pipeline {
     agent any
     tools {
         maven "local maven"
+        jkd "local jkd"
     }
     stages{
         stage('Build'){
